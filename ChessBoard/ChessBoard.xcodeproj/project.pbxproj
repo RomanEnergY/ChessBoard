@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		720633EA6CC33F8541F4EB05 /* Pods_ChessBoard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20DCD3CCABD95E3FAE1EF889 /* Pods_ChessBoard.framework */; };
 		7CCE9ED1257D547100200416 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCE9ED0257D547100200416 /* AppDelegate.swift */; };
 		7CCE9ED3257D547100200416 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCE9ED2257D547100200416 /* SceneDelegate.swift */; };
 		7CCE9ED5257D547100200416 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCE9ED4257D547100200416 /* ViewController.swift */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F82BCBBE54DE8DDCCE28B9A /* Pods-ChessBoard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChessBoard.release.xcconfig"; path = "Target Support Files/Pods-ChessBoard/Pods-ChessBoard.release.xcconfig"; sourceTree = "<group>"; };
+		20DCD3CCABD95E3FAE1EF889 /* Pods_ChessBoard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChessBoard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		37E37AF0079320330F18A9B8 /* Pods-ChessBoard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChessBoard.debug.xcconfig"; path = "Target Support Files/Pods-ChessBoard/Pods-ChessBoard.debug.xcconfig"; sourceTree = "<group>"; };
 		7CCE9ECD257D547100200416 /* ChessBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChessBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CCE9ED0257D547100200416 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7CCE9ED2257D547100200416 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,17 +35,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				720633EA6CC33F8541F4EB05 /* Pods_ChessBoard.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3DD997C5AA5E82CE838C40E3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				20DCD3CCABD95E3FAE1EF889 /* Pods_ChessBoard.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7CCE9EC4257D547100200416 = {
 			isa = PBXGroup;
 			children = (
 				7CCE9ECF257D547100200416 /* ChessBoard */,
 				7CCE9ECE257D547100200416 /* Products */,
+				93E57A66BC7BA0C0D0B42CB7 /* Pods */,
+				3DD997C5AA5E82CE838C40E3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +82,16 @@
 			path = ChessBoard;
 			sourceTree = "<group>";
 		};
+		93E57A66BC7BA0C0D0B42CB7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				37E37AF0079320330F18A9B8 /* Pods-ChessBoard.debug.xcconfig */,
+				0F82BCBBE54DE8DDCCE28B9A /* Pods-ChessBoard.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7CCE9EE1257D547400200416 /* Build configuration list for PBXNativeTarget "ChessBoard" */;
 			buildPhases = (
+				146B29051B91B71F1B2F191F /* [CP] Check Pods Manifest.lock */,
 				7CCE9EC9257D547100200416 /* Sources */,
 				7CCE9ECA257D547100200416 /* Frameworks */,
 				7CCE9ECB257D547100200416 /* Resources */,
+				F6858D8A7B9E0DFBF5414C75 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -131,6 +158,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		146B29051B91B71F1B2F191F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ChessBoard-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F6858D8A7B9E0DFBF5414C75 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ChessBoard/Pods-ChessBoard-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ChessBoard/Pods-ChessBoard-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ChessBoard/Pods-ChessBoard-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7CCE9EC9257D547100200416 /* Sources */ = {
@@ -283,6 +352,7 @@
 		};
 		7CCE9EE2257D547400200416 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 37E37AF0079320330F18A9B8 /* Pods-ChessBoard.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -302,6 +372,7 @@
 		};
 		7CCE9EE3257D547400200416 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F82BCBBE54DE8DDCCE28B9A /* Pods-ChessBoard.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
