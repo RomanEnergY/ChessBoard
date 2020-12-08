@@ -35,26 +35,31 @@ class CustomMainView: UIView {
 	}
 	
 	//MARK: - Public func
-	func configure() {
+	func showHowMove(for chessFigure: ChessFigure, cellBoard: CellBoard) {
+		
+	}
+	
+	//MARK: - Private func
+	private func configure() {
 		backgroundColor = .white
 		
 		boardStackView = UIStackView()
 		boardStackView.axis = .vertical
 	}
 	
-	func addSubviews() {
+	private func addSubviews() {
 		self.addSubview(boardStackView)
-		boardStackView.addArrangedSubview(BoardTitle(titleHorizontal: appearance.titleHorizontal, dimensionCellBoard: appearance.dimensionCellBoard))
+		boardStackView.addArrangedSubview(BoardTitleView(titleHorizontal: appearance.titleHorizontal, dimensionCellBoard: appearance.dimensionCellBoard))
 		for i in 0...7 {
-			let boardRow = BoardRow(row: appearance.titleVertical[i], titleHorizontal: appearance.titleHorizontal, dimensionCellBoard: appearance.dimensionCellBoard)
+			let boardRow = BoardRowView(column: appearance.titleVertical[i], titleHorizontal: appearance.titleHorizontal, dimensionCellBoard: appearance.dimensionCellBoard)
 			boardRow.delegate = self
 			boardStackView.addArrangedSubview(boardRow)
 		}
-		boardStackView.addArrangedSubview(BoardTitle(titleHorizontal: appearance.titleHorizontal, dimensionCellBoard: appearance.dimensionCellBoard))
+		boardStackView.addArrangedSubview(BoardTitleView(titleHorizontal: appearance.titleHorizontal, dimensionCellBoard: appearance.dimensionCellBoard))
 
 	}
 	
-	func makeConstraints() {
+	private func makeConstraints() {
 		boardStackView.snp.makeConstraints { make in
 			make.center.equalToSuperview()
 		}
@@ -63,7 +68,7 @@ class CustomMainView: UIView {
 
 //MARK: - extension LabelActionHandler
 extension CustomMainView: LabelActionHandler {
-	func actionHandler(cellName: String) {
-		delegate?.actionHandler(cellName: cellName)
+	func actionHandler(cellBoard: CellBoard) {
+		delegate?.actionHandler(cellBoard: cellBoard)
 	}
 }

@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class BoardTitle: UIStackView {
+class BoardTitleView: UIStackView {
 	private let dimensionCellBoard: CGFloat
 	
 	init(titleHorizontal: [String], dimensionCellBoard: CGFloat) {

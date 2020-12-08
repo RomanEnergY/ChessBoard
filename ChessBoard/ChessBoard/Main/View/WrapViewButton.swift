@@ -7,11 +7,18 @@
 
 import UIKit
 
+struct CellBoard {
+	let row: Int
+	let rowTitle: String
+	let column: Int
+	let columnTitle: String
+}
+
 class WrapViewButton: UIButton {
-	private(set) var title: String
+	private(set) var cellBoard: CellBoard
 	
-	init(title: String) {
-		self.title = title
+	init(cellBoard: CellBoard) {
+		self.cellBoard = cellBoard
 		
 		super.init(frame: CGRect.zero)
 	}

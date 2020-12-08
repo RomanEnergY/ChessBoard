@@ -14,29 +14,29 @@ extension Appearance {
 }
 
 protocol LabelActionHandler: class {
-	func actionHandler(cellName: String)
+	func actionHandler(cellBoard: CellBoard)
 }
 
-class BoardRow: UIStackView {
+class BoardRowView: UIStackView {
 	//MARK: - private variable
 	private let appearance = Appearance()
 	private let dimensionCellBoard: CGFloat
-	private let row: Int
+	private let column: Int
 	
 	//MARK: - public variable
 	weak var delegate: LabelActionHandler?
 	
 	//MARK: - inits
-	init(row: Int, titleHorizontal: [String], dimensionCellBoard: CGFloat) {
-		self.row = row
+	init(column: Int, titleHorizontal: [String], dimensionCellBoard: CGFloat) {
+		self.column = column
 		self.dimensionCellBoard = dimensionCellBoard
 		
 		super.init(frame: CGRect.zero)
 		self.axis = .horizontal
 		
-		self.addArrangedSubview(createCell(text: String(row)))
-		createRowBoard(row: row, titleHorizontal: titleHorizontal)
-		self.addArrangedSubview(createCell(text: String(row)))
+		self.addArrangedSubview(createCell(text: String(column)))
+		createRowBoard(row: column, titleHorizontal: titleHorizontal)
+		self.addArrangedSubview(createCell(text: String(column)))
 	}
 	
 	required init(coder: NSCoder) {
@@ -60,8 +60,8 @@ class BoardRow: UIStackView {
 		return wrapView
 	}
 	
-	private func createCellBorder(isWhite: Bool, title: String) -> UIView {
-		let wrapView = WrapViewButton(title: "\(title):\(row)")
+	private func createCellBorder(isWhite: Bool, row: Int, rowTitle: String) -> UIView {
+		let wrapView = WrapViewButton(cellBoard: CellBoard(row: row, rowTitle: rowTitle, column: column, columnTitle: String(column)))
 		wrapView.layer.borderWidth = 0.5
 		wrapView.backgroundColor = isWhite ? appearance.bordWhite: appearance.bordBlack
 		
@@ -86,11 +86,11 @@ class BoardRow: UIStackView {
 		
 		for i in 0...7 {
 			isWhite = !isWhite
-			self.addArrangedSubview(createCellBorder(isWhite: isWhite, title: titleHorizontal[i]))
+			self.addArrangedSubview(createCellBorder(isWhite: isWhite, row: i + 1, rowTitle: titleHorizontal[i]))
 		}
 	}
 	
 	@objc private func actionWrapView(sender: WrapViewButton) {
-		delegate?.actionHandler(cellName: sender.title)
+		delegate?.actionHandler(cellBoard: sender.cellBoard)
 	}
 }

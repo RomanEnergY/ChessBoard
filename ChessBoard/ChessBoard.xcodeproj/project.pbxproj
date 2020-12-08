@@ -8,9 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		720633EA6CC33F8541F4EB05 /* Pods_ChessBoard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20DCD3CCABD95E3FAE1EF889 /* Pods_ChessBoard.framework */; };
+		7C22091F257EC9D0000E813E /* ChessFigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C22091E257EC9D0000E813E /* ChessFigure.swift */; };
 		7C9F20BE257D61F800AAB211 /* CustomMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9F20BD257D61F800AAB211 /* CustomMainView.swift */; };
-		7CA90E5F257D676900E698CF /* BoardTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA90E5E257D676900E698CF /* BoardTitle.swift */; };
-		7CA90E62257D7BA800E698CF /* BoardRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA90E61257D7BA800E698CF /* BoardRow.swift */; };
+		7CA90E5F257D676900E698CF /* BoardTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA90E5E257D676900E698CF /* BoardTitleView.swift */; };
+		7CA90E62257D7BA800E698CF /* BoardRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA90E61257D7BA800E698CF /* BoardRowView.swift */; };
 		7CA90E68257D913400E698CF /* WrapViewButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA90E67257D913400E698CF /* WrapViewButton.swift */; };
 		7CCE9ED1257D547100200416 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCE9ED0257D547100200416 /* AppDelegate.swift */; };
 		7CCE9ED3257D547100200416 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCE9ED2257D547100200416 /* SceneDelegate.swift */; };
@@ -24,9 +25,10 @@
 		0F82BCBBE54DE8DDCCE28B9A /* Pods-ChessBoard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChessBoard.release.xcconfig"; path = "Target Support Files/Pods-ChessBoard/Pods-ChessBoard.release.xcconfig"; sourceTree = "<group>"; };
 		20DCD3CCABD95E3FAE1EF889 /* Pods_ChessBoard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChessBoard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		37E37AF0079320330F18A9B8 /* Pods-ChessBoard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChessBoard.debug.xcconfig"; path = "Target Support Files/Pods-ChessBoard/Pods-ChessBoard.debug.xcconfig"; sourceTree = "<group>"; };
+		7C22091E257EC9D0000E813E /* ChessFigure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessFigure.swift; sourceTree = "<group>"; };
 		7C9F20BD257D61F800AAB211 /* CustomMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMainView.swift; sourceTree = "<group>"; };
-		7CA90E5E257D676900E698CF /* BoardTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardTitle.swift; sourceTree = "<group>"; };
-		7CA90E61257D7BA800E698CF /* BoardRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardRow.swift; sourceTree = "<group>"; };
+		7CA90E5E257D676900E698CF /* BoardTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardTitleView.swift; sourceTree = "<group>"; };
+		7CA90E61257D7BA800E698CF /* BoardRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardRowView.swift; sourceTree = "<group>"; };
 		7CA90E67257D913400E698CF /* WrapViewButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrapViewButton.swift; sourceTree = "<group>"; };
 		7CCE9ECD257D547100200416 /* ChessBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChessBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CCE9ED0257D547100200416 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -70,12 +72,29 @@
 			isa = PBXGroup;
 			children = (
 				7CCE9ED4257D547100200416 /* MainViewController.swift */,
-				7C9F20BD257D61F800AAB211 /* CustomMainView.swift */,
-				7CA90E5E257D676900E698CF /* BoardTitle.swift */,
-				7CA90E61257D7BA800E698CF /* BoardRow.swift */,
-				7CA90E67257D913400E698CF /* WrapViewButton.swift */,
+				7CA9326025800DAC00E24129 /* Model */,
+				7CA9326125800DC200E24129 /* View */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		7CA9326025800DAC00E24129 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7C22091E257EC9D0000E813E /* ChessFigure.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7CA9326125800DC200E24129 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7C9F20BD257D61F800AAB211 /* CustomMainView.swift */,
+				7CA90E5E257D676900E698CF /* BoardTitleView.swift */,
+				7CA90E61257D7BA800E698CF /* BoardRowView.swift */,
+				7CA90E67257D913400E698CF /* WrapViewButton.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		7CCE9EC4257D547100200416 = {
@@ -234,12 +253,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				7CCE9ED5257D547100200416 /* MainViewController.swift in Sources */,
-				7CA90E5F257D676900E698CF /* BoardTitle.swift in Sources */,
+				7CA90E5F257D676900E698CF /* BoardTitleView.swift in Sources */,
 				7CA90E68257D913400E698CF /* WrapViewButton.swift in Sources */,
 				7C9F20BE257D61F800AAB211 /* CustomMainView.swift in Sources */,
+				7C22091F257EC9D0000E813E /* ChessFigure.swift in Sources */,
 				7CCE9ED1257D547100200416 /* AppDelegate.swift in Sources */,
 				7CCE9ED3257D547100200416 /* SceneDelegate.swift in Sources */,
-				7CA90E62257D7BA800E698CF /* BoardRow.swift in Sources */,
+				7CA90E62257D7BA800E698CF /* BoardRowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

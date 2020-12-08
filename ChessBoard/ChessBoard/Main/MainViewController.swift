@@ -13,16 +13,13 @@ class MainViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		print("viewDidLoad: MainViewController")
-		
 		view = CustomMainView(frame: UIScreen.main.bounds)
 		customView.delegate = self
-
 	}
 }
 
 extension MainViewController: LabelActionHandler {
-	func actionHandler(cellName: String) {
-		print(cellName)
+	func actionHandler(cellBoard: CellBoard) {
+		customView.showHowMove(for: .queen, cellBoard: cellBoard)
 	}
 }
